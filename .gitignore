@@ -364,4 +364,6 @@ FodyWeavers.xsd
 
 #JetBrains Rider
 .idea/
+# obj folder for build files
+obj/
 
