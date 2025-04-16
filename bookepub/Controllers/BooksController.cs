@@ -7,47 +7,47 @@ namespace bookepub.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AdminsController : ControllerBase
+    public class BooksController : ControllerBase
     {
         private readonly BookepubContext _context;
 
-        public AdminsController(BookepubContext context)
+        public BooksController(BookepubContext context)
         {
             _context = context;
         }
 
-        // GET: api/Admins
+        // GET: api/Books
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Admin>>> GetAdmin()
+        public async Task<ActionResult<IEnumerable<Book>>> GetBook()
         {
-            return await _context.Admin.ToListAsync();
+            return await _context.Book.ToListAsync();
         }
 
-        // GET: api/Admins/5
+        // GET: api/Books/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Admin>> GetAdmin(int id)
+        public async Task<ActionResult<Book>> GetBook(int id)
         {
-            var admin = await _context.Admin.FindAsync(id);
+            var book = await _context.Book.FindAsync(id);
 
-            if (admin == null)
+            if (book == null)
             {
                 return NotFound();
             }
 
-            return admin;
+            return book;
         }
 
-        // PUT: api/Admins/5
+        // PUT: api/Books/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAdmin(int id, Admin admin)
+        public async Task<IActionResult> PutBook(int id, Book book)
         {
-            if (id != admin.AdminId)
+            if (id != book.BookId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(admin).State = EntityState.Modified;
+            _context.Entry(book).State = EntityState.Modified;
 
             try
             {
@@ -55,7 +55,7 @@ namespace bookepub.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!AdminExists(id))
+                if (!BookExists(id))
                 {
                     return NotFound();
                 }
@@ -68,36 +68,36 @@ namespace bookepub.Controllers
             return NoContent();
         }
 
-        // POST: api/Admins
+        // POST: api/Books
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Admin>> PostAdmin(Admin admin)
+        public async Task<ActionResult<Book>> PostBook(Book book)
         {
-            _context.Admin.Add(admin);
+            _context.Book.Add(book);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetAdmin", new { id = admin.AdminId }, admin);
+            return CreatedAtAction("GetBook", new { id = book.BookId }, book);
         }
 
-        // DELETE: api/Admins/5
+        // DELETE: api/Books/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAdmin(int id)
+        public async Task<IActionResult> DeleteBook(int id)
         {
-            var admin = await _context.Admin.FindAsync(id);
-            if (admin == null)
+            var book = await _context.Book.FindAsync(id);
+            if (book == null)
             {
                 return NotFound();
             }
 
-            _context.Admin.Remove(admin);
+            _context.Book.Remove(book);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool AdminExists(int id)
+        private bool BookExists(int id)
         {
-            return _context.Admin.Any(e => e.AdminId == id);
+            return _context.Book.Any(e => e.BookId == id);
         }
     }
 }
