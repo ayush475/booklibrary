@@ -11,11 +11,13 @@ public class BookepubContext : DbContext
     }
     public DbSet<Admin> Admin { get; set; }
 
-public DbSet<bookepub.Models.Announcement> Announcement { get; set; } = default!;
+public DbSet<Announcement> Announcement { get; set; } = default!;
 
-public DbSet<bookepub.Models.Author> Author { get; set; } = default!;
+public DbSet<Author> Author { get; set; } = default!;
 
-public DbSet<bookepub.Models.Book> Book { get; set; } = default!;
+public DbSet<Book> Book { get; set; } = default!;
+
+public DbSet<Publisher> Publisher { get; set; } = default!;
 
 
     // public DbSet<Incident> Incident { get; set; }
