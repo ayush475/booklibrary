@@ -1,21 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/ayush/RiderProjects/bookepub/bookepub/bookepub.csproj": {}
+    "/home/lean/code/booklibrary/bookepub/bookepub.csproj": {}
   },
   "projects": {
-    "/home/ayush/RiderProjects/bookepub/bookepub/bookepub.csproj": {
+    "/home/lean/code/booklibrary/bookepub/bookepub.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/ayush/RiderProjects/bookepub/bookepub/bookepub.csproj",
+        "projectUniqueName": "/home/lean/code/booklibrary/bookepub/bookepub.csproj",
         "projectName": "bookepub",
-        "projectPath": "/home/ayush/RiderProjects/bookepub/bookepub/bookepub.csproj",
-        "packagesPath": "/home/ayush/.nuget/packages/",
-        "outputPath": "/home/ayush/RiderProjects/bookepub/bookepub/obj/",
+        "projectPath": "/home/lean/code/booklibrary/bookepub/bookepub.csproj",
+        "packagesPath": "/home/lean/.nuget/packages/",
+        "outputPath": "/home/lean/code/booklibrary/bookepub/obj/",
         "projectStyle": "PackageReference",
-        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
-          "/home/ayush/.nuget/NuGet/NuGet.Config"
+          "/home/lean/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -43,6 +42,34 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.15, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerUI": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -62,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/ayush/.dotnet/sdk/8.0.406/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/lean/.dotnet/sdk/8.0.406/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

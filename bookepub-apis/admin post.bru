@@ -1,0 +1,33 @@
+meta {
+  name: admin post
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:5036/api/Admins
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "Username": "sampleUsername",
+    "Password": "samplePassword",
+    "Name": "Sample Admin",
+    "Email": "sample@email.com",
+    "Role": "administrator"
+  }
+  
+}
+
+body:text {
+  {
+    "Username": "sampleUsername",
+    "Password": "samplePassword",
+    "Name": "Sample Admin",
+    "Email": "sample@email.com",
+    "Role": "administrator"
+  }
+  
+}
